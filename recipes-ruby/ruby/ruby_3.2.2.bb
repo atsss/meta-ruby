@@ -77,7 +77,10 @@ SRC_URI[sha512sum] = "bcc68f3f24c1c8987d9c80b57332e5791f25b935ba38daf5addf60dbfe
 inherit autotools ptest pkgconfig
 
 # Specify any options you want to pass to the configure script using EXTRA_OECONF:
-EXTRA_OECONF = "--disable-install-rdoc"
+EXTRA_OECONF = "\
+    --disable-install-rdoc \
+    --disable-rpath \
+"
 
 FILES:${PN} += "${datadir}/rubygems"
 
